@@ -25,20 +25,14 @@ sumInfo:iSumInfos = {
   freshBlood: false,
   hotStreak: false
 }
-info: Partial<iSumInfos>[] = [];
+info: iSumInfos[] = [];
 id:string = environment.sisilloId;
+
 constructor(private riotSvc:RiotService){
   this.riotSvc.getSummonerInfo(this.id).subscribe((res)=>{
-    this.sumInfo = res
+    this.info = res
     console.log(this.sumInfo, this.info);
    })
 }
 
-
-  getSummoner() {
-   this.riotSvc.getSummonerInfo(this.id).subscribe((res:iSumInfos)=>{
-    this.sumInfo = res;
-    console.log(this.sumInfo);
-   })
-  }
 }

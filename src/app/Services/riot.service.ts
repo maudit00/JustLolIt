@@ -16,8 +16,7 @@ export class RiotService {
     return this.http.get<iSummoner>(environment.by_name + '/' + name)
   }
   getSummonerInfo(summonerId: string) {
-  return this.http.get<iSumInfos>(environment.summonerInfo + '/' + summonerId + environment.Key)
-  .pipe(tap((res) => res.queueType === 'RANKED_SOLO_5x5'));
+  return this.http.get<iSumInfos[]>(environment.summonerInfo + '/' + summonerId + environment.Key)
   }
 
 }
