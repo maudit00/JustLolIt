@@ -10,31 +10,15 @@ import { Component } from '@angular/core';
 })
 export class SummonersComponent {
   summoner!: iSummoner;
-  sumInfo: iSumInfos = {
-    leagueId: '',
-    queueType: '',
-    tier: '',
-    rank: '',
-    summonerId: '',
-    summonerName: '',
-    leaguePoints: 0,
-    wins: 0,
-    losses: 0,
-    veteran: false,
-    inactive: false,
-    freshBlood: false,
-    hotStreak: false,
-  };
+  sumInfo!: iSumInfos;
   info: iSumInfos[] = [];
   id: string = environment.sisilloId;
   imgSrc: string = '';
 
   constructor(private riotSvc: RiotService) {
     this.riotSvc.getSummonerInfo(this.id).subscribe((res) => {
-      this.info = res;
+      this.sumInfo = res[0];
       this.getTierImg(res[0].tier);
-      console.log(this.imgSrc);
-      console.log(this.sumInfo, this.info);
     });
   }
 

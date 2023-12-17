@@ -4,12 +4,16 @@ import { SummonerCardComponent } from './summoner-card/summoner-card.component';
 
 
 
+
 @NgModule({
   declarations: [
     SummonerCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports :[
+
   ]
 })
 export class SharedModule { }
