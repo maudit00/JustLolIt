@@ -8,7 +8,7 @@ export interface iSummoner {
   summonerLevel: number
 }
 
-export interface iSumInfos {
+export interface iRanked {
   leagueId: string
   queueType: string
   tier: string
@@ -25,7 +25,8 @@ export interface iSumInfos {
 }
 
 export interface iInfos {
-  suminfo: iSumInfos[]
+  general:iSummoner
+  ranked:iRanked
 }
 
 export interface iPreset {

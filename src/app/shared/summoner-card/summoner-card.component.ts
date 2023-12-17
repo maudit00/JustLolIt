@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { iSumInfos } from '../../Models/i-summoner';
+import { iInfos } from '../../Models/i-summoner';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-summoner-card',
@@ -8,42 +9,51 @@ import { iSumInfos } from '../../Models/i-summoner';
 })
 export class SummonerCardComponent {
 
-  @Input() summoner!: iSumInfos;
+  @Input() summoner!: iInfos;
 
   imgSrc:string = '';
+  iconUrl:string = environment.profileIcon
 
 
   getTierImg(tier:string) {
-    console.log(tier.split(' '));
-
+    console.log(this.summoner)
+    if(tier == undefined) {
+      return  '../../../assets/img/tiers/unranked.png'
+    }
   switch (tier.split(' ')[0]) {
     case 'DIAMOND':
-      this.imgSrc = '../../../assets/img/tiers/diamond.png';
-      break;
+      return'../../../assets/img/tiers/diamond.png';
+
     case 'PLATINUM':
-      this.imgSrc = '../../../assets/img/tiers/platinum.png';
-      break;
+      return'../../../assets/img/tiers/platinum.png';
+
     case 'GOLD':
-      this.imgSrc = '../../../assets/img/tiers/gold.png';
-      break;
+      return'../../../assets/img/tiers/gold.png';
+
     case 'SILVER':
-      this.imgSrc = '../../../assets/img/tiers/silver.png';
-      break;
+      return'../../../assets/img/tiers/silver.png';
+
     case 'BRONZE':
-      this.imgSrc = '../../../assets/img/tiers/bronze.png';
-      break;
+      return'../../../assets/img/tiers/bronze.png';
+
     case 'MASTER':
-      this.imgSrc = '../../../assets/img/tiers/master.png';
-      break;
+      return'../../../assets/img/tiers/master.png';
+
     case 'GRANDMASTER':
-      this.imgSrc = '../../../assets/img/tiers/grandmaster.png';
-      break;
+      return'../../../assets/img/tiers/grandmaster.png';
+
     case 'CHALLENGER':
-      this.imgSrc = '../../../assets/img/tiers/challenger.png';
-      break;
-    case 'NONE':
+      return'../../../assets/img/tiers/challenger.png';
+
+    case '':
+      return'../../../assets/img/tiers/unranked.png';
+
+    default:
+      return ''
   }
 }
+
+
 }
 
 

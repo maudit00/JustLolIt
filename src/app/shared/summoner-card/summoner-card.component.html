@@ -1,15 +1,19 @@
 <div class="row summoner-card">
   <div class="col-2">
-    {{summoner.summonerName}}
+    <p class="details">{{summoner.ranked.summonerName}}</p>
+    <!-- <img [src]="iconUrl+summoner.general.profileIconId+'.png'" alt=""> -->
   </div>
   <div class="col-7">
-    <p class="details"> LP : {{summoner.leaguePoints}}</p>
-    <p class="details">Vittorie : {{summoner.wins}}</p>
-    <p class="details">Sconfitte : {{summoner.losses}}</p>
+    <p class="details">Vittorie : {{summoner.ranked.wins}}</p>
+    <p class="details">Sconfitte : {{summoner.ranked.losses}}</p>
   </div>
   <div class="col-3">
-    <img [srcset]="getTierImg(summoner.tier)"  class="tier-icon" alt="">
-    {{summoner.rank}}
-    {{summoner.tier}}
+    <img [srcset]="getTierImg(summoner.ranked.tier)"  class="tier-icon" alt="">
+    <p class="details"> LP : {{summoner.ranked.leaguePoints}}</p>
+    <p class="details">{{summoner.ranked.rank}}</p>
+    <p class="details">{{summoner.ranked.tier}}</p>
   </div>
 </div>
+
+
+devo andare dopo continuo

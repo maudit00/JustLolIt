@@ -1,10 +1,11 @@
 export const environment = {
 by_name : "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/",
-by_id : "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-account",
+by_id : "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-account/",
 by_puuid : "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/",
-summonerInfo : "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner",
+summonerInfo : "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/",
 matchesId : "/lol/match/v5/matches/by-puuid/",
-Key: "?api_key=RGAPI-1e2ec53f-058c-41b6-878f-544686c18db6",
+profileIcon: "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/",
+Key: "RGAPI-5e024b42-1b52-4906-bfe9-73875e9cd1cd",
 summonerArr : [
  {
   "id": "DRPD696cwbaHxyAEEXOXWkqfzU5_s4DVDarEzPZIxJA9Ei4",
