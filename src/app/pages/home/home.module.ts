@@ -4,6 +4,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink } from '@angular/router';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomeComponent } from './home.component';
     CommonModule,
     HomeRoutingModule,
     NgbCollapseModule,
-    RouterLink
+    RouterLink,
+    FormsModule
   ]
 })
 export class HomeModule { }
