@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SummonersRoutingModule } from './summoners-routing.module';
 import { SummonersComponent } from './summoners.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SummonersComponent } from './summoners.component';
   ],
   imports: [
     CommonModule,
-    SummonersRoutingModule
+    SummonersRoutingModule,
+    HttpClientModule
   ]
 })
 export class SummonersModule { }

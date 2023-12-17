@@ -24,4 +24,6 @@ export interface iSumInfos {
   hotStreak: boolean
 }
 
-
+export interface iInfos {
+  suminfo: iSumInfos[]
+}
