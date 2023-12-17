@@ -27,3 +27,10 @@ export interface iSumInfos {
 export interface iInfos {
   suminfo: iSumInfos[]
 }
+
+export interface iPreset {
+  id:string;
+  accountId:string;
+  puuid:string;
+  name:string;
+}

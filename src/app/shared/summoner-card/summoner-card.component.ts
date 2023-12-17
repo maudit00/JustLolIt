@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { RiotService } from '../../Services/riot.service';
-import { environment } from '../../../environments/environment.development';
-import { iSummoner, iSumInfos } from '../../Models/i-summoner';
+import { Component, Input } from '@angular/core';
+import { iSumInfos } from '../../Models/i-summoner';
 
 @Component({
   selector: 'app-summoner-card',
@@ -9,34 +7,11 @@ import { iSummoner, iSumInfos } from '../../Models/i-summoner';
   styleUrl: './summoner-card.component.scss'
 })
 export class SummonerCardComponent {
-  summoner!: iSummoner;
-  sumInfo: iSumInfos = {
-    leagueId: '',
-    queueType: '',
-    tier: '',
-    rank: '',
-    summonerId: '',
-    summonerName: '',
-    leaguePoints: 0,
-    wins: 0,
-    losses: 0,
-    veteran: false,
-    inactive: false,
-    freshBlood: false,
-    hotStreak: false,
-  };
-  info: iSumInfos[] = [];
-  id: string = environment.sisilloId;
-  imgSrc: string = '';
 
-  constructor(private riotSvc: RiotService) {
-    this.riotSvc.getSummonerInfo(this.id).subscribe((res) => {
-      this.info = res;
-      this.getTierImg(res[0].tier);
-      console.log(this.imgSrc);
-      console.log(this.sumInfo, this.info);
-    });
-  }
+  @Input() summoner!: iSumInfos;
+
+  imgSrc:string = '';
+
 
   getTierImg(tier:string) {
     console.log(tier.split(' '));

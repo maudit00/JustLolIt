@@ -9,14 +9,19 @@ import { map, tap } from 'rxjs';
 })
 export class RiotService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  euwUrl : string = '${environment.euw1}';
+  euwUrl: string = '${environment.euw1}';
   getSummonerByName(name: string) {
     return this.http.get<iSummoner>(environment.by_name + '/' + name)
   }
-  getSummonerInfo(summonerId: string) {
-  return this.http.get<iSumInfos[]>(environment.summonerInfo + '/' + summonerId + environment.Key)
+  getSummonerInfoSolo(summonerId: string) {
+    return this.http.get<iSumInfos[]>(environment.summonerInfo + '/' + summonerId + environment.Key)
+    .pipe(tap(res => {
+      res.forEach(element => {
+        element.queueType = "RANKED_SOLO_5x5"
+      })
+    }))
   }
 
 }

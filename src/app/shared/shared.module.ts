@@ -13,7 +13,7 @@ import { SummonerCardComponent } from './summoner-card/summoner-card.component';
     CommonModule,
   ],
   exports :[
-
+    SummonerCardComponent
   ]
 })
 export class SharedModule { }
