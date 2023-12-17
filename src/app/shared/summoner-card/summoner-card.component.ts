@@ -16,7 +16,6 @@ export class SummonerCardComponent {
 
 
   getTierImg(tier:string) {
-    console.log(this.summoner)
     if(tier == undefined) {
       return  '../../../assets/img/tiers/unranked.png'
     }
@@ -51,6 +50,12 @@ export class SummonerCardComponent {
     default:
       return ''
   }
+}
+
+getIcon (summoner:iInfos) {
+  console.log(summoner);
+
+  return this.iconUrl + summoner.general.profileIconId + '.png'
 }
 
 
